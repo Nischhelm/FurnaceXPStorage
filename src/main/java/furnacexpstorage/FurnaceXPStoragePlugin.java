@@ -12,6 +12,9 @@ public class FurnaceXPStoragePlugin implements IFMLLoadingPlugin {
 	public FurnaceXPStoragePlugin() {
 		MixinBootstrap.init();
 		FermiumRegistryAPI.enqueueMixin(false, "mixins.furnacexpstorage.json");
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.nethercraft.json", () -> Loader.isModLoaded("nethercraft"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.crafttweaker.json", () -> Loader.isModLoaded("crafttweaker"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.jei.json", () -> Loader.isModLoaded("jei"));
 	}
 
 	@Override

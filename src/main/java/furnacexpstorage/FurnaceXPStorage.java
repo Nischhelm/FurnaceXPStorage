@@ -18,7 +18,7 @@ import java.util.Random;
 )
 public class FurnaceXPStorage {
     public static final String MODID = "furnacexpstorage";
-    public static final String VERSION = "1.1.0";
+    public static final String VERSION = "1.1.1";
     public static final String NAME = "FurnaceXPStorage";
     public static final Random RAND = new Random();
     public static final Logger LOGGER = LogManager.getLogger();

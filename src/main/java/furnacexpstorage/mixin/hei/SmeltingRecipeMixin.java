@@ -15,6 +15,7 @@ import java.util.List;
 
 @Mixin(SmeltingRecipe.class)
 public abstract class SmeltingRecipeMixin {
+    @SuppressWarnings("target")
     @Shadow(remap = false) @Final private List<ItemStack> input;
 
     @WrapOperation(

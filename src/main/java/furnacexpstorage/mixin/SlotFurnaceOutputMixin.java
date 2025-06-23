@@ -10,6 +10,7 @@ import net.minecraft.inventory.SlotFurnaceOutput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -47,7 +48,7 @@ public abstract class SlotFurnaceOutputMixin extends Slot {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/item/crafting/FurnaceRecipes;getSmeltingExperience(Lnet/minecraft/item/ItemStack;)F")
     )
     private float furnaceXpStorage_slotFurnaceOutput_getSmeltingExperience(FurnaceRecipes instance, ItemStack stack, Operation<Float> original){
-        NBTTagCompound nbt = ((TileEntityFurnace) this.inventory).getTileData();
+        NBTTagCompound nbt = ((TileEntity) this.inventory).getTileData();
         if(!nbt.hasKey(FurnaceXPStorage.NBTKEY))
             return original.call(instance, stack);   //Default behavior
         else

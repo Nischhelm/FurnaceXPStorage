@@ -2,7 +2,7 @@ package furnacexpstorage.mixin.hei;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import furnacexpstorage.handler.SmeltingExperiencesByInput;
+import furnacexpstorage.util.SmeltItemHelper;
 import mezz.jei.plugins.vanilla.furnace.SmeltingRecipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -27,6 +27,6 @@ public abstract class SmeltingRecipeMixin {
         // examples: sand and red sand -> glass, or all log types to charcoal
         //since they have to all be registered to the same xp value (otherwise it would be different smelting recipes), i just choose the first entry to get the xp
         if(input == null || input.isEmpty()) return original.call(instance,stack);
-        return SmeltingExperiencesByInput.getSmeltingExperience(input.get(0),stack);
+        return SmeltItemHelper.getSmeltingExperience(input.get(0),stack);
     }
 }

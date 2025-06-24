@@ -1,7 +1,7 @@
 package furnacexpstorage.mixin.crafttweaker;
 
 import crafttweaker.mc1120.actions.ActionFurnaceRemoveRecipe;
-import furnacexpstorage.handler.SmeltingExperiencesByInput;
+import furnacexpstorage.util.SmeltItemHelper;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,6 +21,6 @@ public abstract class ActionFurnaceRemoveRecipeMixin {
             remap = false
     )
     private void furnaceXpStorage_actionFurnaceRemoveRecipe_apply(CallbackInfo ci){
-        this.smeltingMap.forEach((k,v) -> SmeltingExperiencesByInput.removeRecipeFor(k));
+        this.smeltingMap.forEach((k,v) -> SmeltItemHelper.removeRecipeFor(k));
     }
 }

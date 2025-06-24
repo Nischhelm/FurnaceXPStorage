@@ -1,14 +1,12 @@
 {
   "required": true,
-  "package": "furnacexpstorage.mixin.vanilla",
+  "package": "furnacexpstorage.mixin.betternether",
   "refmap": "mixins.furnacexpstorage.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "mixins": [
-    "FurnaceRecipesMixin",
-    "SlotFurnaceOutputMixin",
-    "TileEntityFurnaceMixin"
+    "TileEntityForgeMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

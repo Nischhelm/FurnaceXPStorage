@@ -1,6 +1,6 @@
-package furnacexpstorage.mixin;
+package furnacexpstorage.mixin.vanilla;
 
-import furnacexpstorage.handler.SmeltingExperiencesByInput;
+import furnacexpstorage.util.SmeltItemHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public abstract class FurnaceRecipesMixin {
             at = @At(value = "TAIL")
     )
     private void furnaceXpStorage_furnaceRecipes_storeRecipes(ItemStack input, ItemStack output, float experience, CallbackInfo ci) {
-        SmeltingExperiencesByInput.addFurnaceRecipe(input, experience);
+        SmeltItemHelper.addFurnaceRecipe(input, experience);
     }
 }
 

@@ -17,13 +17,14 @@ public class CompatHandler {
                 int major = Integer.parseInt(split[0]);
                 int minor = Integer.parseInt(split[1]);
                 int patch = Integer.parseInt(split[2]);
-                if(major < 4) { isRelevantHeiVersion = false; return false; }
-                if(major == 4 && minor < 24) { isRelevantHeiVersion = false; return false; }
-                if(major == 4 && minor == 24 && patch < 2) { isRelevantHeiVersion = false; return false; }
-                return true;
+                if(major < 4) { isRelevantHeiVersion = false; }
+                else if(major == 4 && minor < 24) { isRelevantHeiVersion = false; }
+                else if(major == 4 && minor == 24 && patch < 2) { isRelevantHeiVersion = false; }
+                else isRelevantHeiVersion = true;
             }
-            catch(Exception ignored) { }
-            return false;
+            catch(Exception ignored) {
+                isRelevantHeiVersion = false;
+            }
         }
         return isRelevantHeiVersion;
     }

@@ -1,7 +1,7 @@
 package furnacexpstorage.mixin.crafttweaker;
 
 import crafttweaker.mc1120.actions.ActionFurnaceRemoveAllRecipes;
-import furnacexpstorage.handler.SmeltingExperiencesByInput;
+import furnacexpstorage.util.SmeltItemHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,6 +15,6 @@ public abstract class ActionFurnaceRemoveAllRecipesMixin {
             remap = false
     )
     private void furnaceXpStorage_actionFurnaceRemoveAllRecipes_apply(CallbackInfo ci){
-        SmeltingExperiencesByInput.clear();
+        SmeltItemHelper.clear();
     }
 }

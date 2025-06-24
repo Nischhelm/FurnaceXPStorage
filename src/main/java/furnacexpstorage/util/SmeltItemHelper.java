@@ -1,15 +1,16 @@
-package furnacexpstorage.handler;
+package furnacexpstorage.util;
 
 import furnacexpstorage.ConfigHandler;
 import furnacexpstorage.FurnaceXPStorage;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SmeltingExperiencesByInput {
+public class SmeltItemHelper {
     //input item, input metadata, experience
     private static final Map<Item, Map<Integer, Float>> experienceListByInput = new HashMap<>();
 
@@ -42,5 +43,12 @@ public class SmeltingExperiencesByInput {
         experienceListByInput.get(input.getItem()).remove(input.getMetadata());
         if (experienceListByInput.get(input.getItem()).isEmpty())
             experienceListByInput.remove(input.getItem());
+    }
+
+    public static void storeXpFromSmelting(ItemStack inputStack, ItemStack cookedStack, NBTTagCompound tileData){
+        float xp = getSmeltingExperience(inputStack, cookedStack);
+        xp *= cookedStack.getCount();
+
+        tileData.setFloat(FurnaceXPStorage.NBTKEY, tileData.getFloat(FurnaceXPStorage.NBTKEY) + xp);
     }
 }

@@ -21,11 +21,6 @@ public class FurnaceXPStorage {
     public static final String VERSION = "1.1.4";
     public static final String NAME = "FurnaceXPStorage";
     public static final Random RAND = new Random();
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(NAME);
     public static final String NBTKEY = "StoredXP";
-
-	@Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(BlockBreakHandler.class);
-    }
 }

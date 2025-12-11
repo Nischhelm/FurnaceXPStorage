@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "furnacexpstorage.mixin.nethercraft",
+  "package": "furnacexpstorage.mixin.modfurnaces.nethercraft",
   "refmap": "mixins.furnacexpstorage.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",

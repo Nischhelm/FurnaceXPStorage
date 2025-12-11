@@ -1,17 +1,17 @@
-package furnacexpstorage.mixin.vanilla;
+package furnacexpstorage.mixin.modfurnaces.morefurnaces.nomifactoryedition;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dan.morefurnaces.tileentity.TileEntityIronFurnace;
 import furnacexpstorage.util.SmeltItemHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(TileEntityFurnace.class)
-public abstract class TileEntityFurnaceMixin {
+@Mixin(TileEntityIronFurnace.class)
+public abstract class TileEntityIronFurnaceMixin {
 
     /**
      * When smelting items, store the xp in TileEntity NBT
@@ -22,10 +22,9 @@ public abstract class TileEntityFurnaceMixin {
     )
     private void furnaceXpStorage_tileEntityFurnace_storeSmeltXPinTileNBT(
             CallbackInfo ci,
-            @Local(name = "itemstack") ItemStack inputStack,
-            @Local(name = "itemstack1") ItemStack cookedStack
+            @Local(name = "input") ItemStack inputStack,
+            @Local(name = "result") ItemStack cookedStack
     ) {
         SmeltItemHelper.storeXpFromSmelting(inputStack, cookedStack, ((TileEntity) (Object) this).getTileData());
     }
 }
-

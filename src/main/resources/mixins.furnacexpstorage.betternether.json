@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "furnacexpstorage.mixin.betternether",
+  "package": "furnacexpstorage.mixin.modfurnaces.betternether",
   "refmap": "mixins.furnacexpstorage.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",

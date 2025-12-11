@@ -1,4 +1,4 @@
-package furnacexpstorage.mixin.hei;
+package furnacexpstorage.mixin.jei.hei;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;

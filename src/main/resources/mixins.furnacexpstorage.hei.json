@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "furnacexpstorage.mixin.hei",
+  "package": "furnacexpstorage.mixin.jei.hei",
   "refmap": "mixins.furnacexpstorage.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "client": [
-    "furnacexpstorage.mixin.jei.hei.SmeltingRecipeMixin"
+    "SmeltingRecipeMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

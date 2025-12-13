@@ -6,6 +6,7 @@ import paulevs.betternether.blocks.BlockCincinnasiteForge;
 import paulevs.betternether.tileentities.TileEntityForge;
 
 public class BetterNetherCompat implements IFurnaceModCompat {
+	@Override
     public boolean isModFurnace(Block block){
         return block instanceof BlockCincinnasiteForge;
     }

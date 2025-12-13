@@ -26,7 +26,6 @@ public class AttachCapabilitiesHandler {
 	//Only listens if allowed
 	@SubscribeEvent
 	public static void onAttackCapabilities(AttachCapabilitiesEvent<TileEntity> event){
-		FurnaceXPStorage.LOGGER.info("AttachCapabilitiesEvent is fired for {}", event.getObject().getClass().getSimpleName());
 		if(isFurnaceTile(event.getObject())){
 			event.addCapability(new ResourceLocation(FurnaceXPStorage.MODID, "xp"), new ICapabilityProvider() {
 				@Override
@@ -48,7 +47,7 @@ public class AttachCapabilitiesHandler {
 	}
 
 	public static class FurnaceXPCapability implements IFluidHandler {
-		public static Fluid xpFluid = FluidRegistry.getFluid(ConfigHandler.xpConfig.fluid);
+		public static Fluid xpFluid = FluidRegistry.getFluid(ConfigHandler.xpConfig.fluidName);
 
 		public TileEntity tile;
 
@@ -73,9 +72,7 @@ public class AttachCapabilitiesHandler {
 		@Nullable
 		@Override
 		public FluidStack drain(FluidStack fluidStack, boolean doDrain) {
-			if(fluidStack.getFluid() == xpFluid){
-				return drain(fluidStack.amount, doDrain);
-			}
+			if(fluidStack.getFluid() == xpFluid) return drain(fluidStack.amount, doDrain);
 			return null;
 		}
 
@@ -83,11 +80,10 @@ public class AttachCapabilitiesHandler {
 		@Override
 		public FluidStack drain(int requested, boolean doDrain) {
 			float stored = tile.getTileData().getFloat(FurnaceXPStorage.NBTKEY);
-			//
+
 			int drained = Math.min(requested, (int)(ConfigHandler.xpConfig.conversionFactor*stored));
-			if(drained == 0){
-				return null;
-			}
+			if(drained == 0) return null;
+
 			if(doDrain){
 				tile.getTileData().setFloat(FurnaceXPStorage.NBTKEY, stored - drained/ConfigHandler.xpConfig.conversionFactor);
 				tile.markDirty();

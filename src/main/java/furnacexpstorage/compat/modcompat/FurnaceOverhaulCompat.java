@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
 public class FurnaceOverhaulCompat implements IFurnaceModCompat {
+	@Override
     public boolean isModFurnace(Block block){
         return block instanceof BlockIronFurnace;
     }

@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
 public class IronFurnacesCompat implements IFurnaceModCompat {
+	@Override
     public boolean isModFurnace(Block block){
         if(block instanceof BlockDiamondFurnace) return true;
         if(block instanceof BlockGlassFurnace) return true;

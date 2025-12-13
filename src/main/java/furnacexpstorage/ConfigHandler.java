@@ -8,13 +8,18 @@ public class ConfigHandler {
     @Config.Name("Vanilla behavior: 1 xp per output item")
     public static boolean recreateVanillaLimit = true;
 
-	@Config.Comment("Configs for liquid xp to be extracted from the furnace")
+	@Config.Comment("Configs for liquid xp to be extracted from furnaces")
+	@Config.Name("Fluid XP options")
 	public static XPConfig xpConfig = new XPConfig();
+
 	public static class XPConfig{
 		@Config.Comment("The fluid xp to be drained. Leave empty to disable")
-		public String fluid = "";
+		@Config.Name("Fluid Name")
+		@Config.RequiresMcRestart
+		public String fluidName = "";
 
 		@Config.Comment("The conversion factor from xp to liquid xp")
-		public float conversionFactor = 0.0f;
+		@Config.Name("Conversion Factor")
+		public float conversionFactor = 0;
 	}
 }

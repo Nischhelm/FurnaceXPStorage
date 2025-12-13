@@ -26,8 +26,7 @@ public class FurnaceXPStorage {
 
 	@Mod.EventHandler
 	public static void onPreInit(FMLPreInitializationEvent event){
-		if(!ConfigHandler.xpConfig.fluid.isEmpty()){
+		if(!ConfigHandler.xpConfig.fluidName.isEmpty())
 			MinecraftForge.EVENT_BUS.register(AttachCapabilitiesHandler.class);
-		}
 	}
 }

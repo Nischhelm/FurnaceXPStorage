@@ -6,6 +6,7 @@ import wily.betterfurnaces.blocks.BlockSmelting;
 import wily.betterfurnaces.tile.TileEntitySmeltingBase;
 
 public class BetterFurnacesReforgedCompat implements IFurnaceModCompat {
+	@Override
     public boolean isModFurnace(Block block){
         return block instanceof BlockSmelting;
     }

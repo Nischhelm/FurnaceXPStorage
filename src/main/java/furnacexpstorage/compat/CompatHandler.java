@@ -25,6 +25,8 @@ public class CompatHandler {
                case "betterfurnacesreforged" : return new BetterFurnacesReforgedCompat();
                case "furnaceoverhaul" : return new FurnaceOverhaulCompat();
                case "furnus" : return new FurnusCompat();
+               case "mysticalagriculture" : return new MysticalAgricultureCompat();
+               case "nuclearcraft" : return new NuclearCraftCompat();
                default: return null;
            }
         });

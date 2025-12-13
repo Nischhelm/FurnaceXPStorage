@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "furnacexpstorage.mixin.modfurnaces.mysticalagriculture",
+  "refmap": "mixins.furnacexpstorage.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "TileEssenceFurnaceMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

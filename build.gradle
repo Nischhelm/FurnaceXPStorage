@@ -74,6 +74,8 @@ dependencies {
     compileOnly fg.deobf("curse.maven:furnace-overhaul-${furnaceoverhaul_version}")
     compileOnly fg.deobf("curse.maven:furnus-${furnus_version}")
     compileOnly fg.deobf("curse.maven:limelib-${limelib_version}")
+    compileOnly fg.deobf("curse.maven:mysticalagriculture-${mysticalagriculture_version}")
+    compileOnly fg.deobf("curse.maven:nuclearcraft-mod-${nuclearcraft_version}")
 
     compileOnly fg.deobf("curse.maven:jei-${jei_version}")
 

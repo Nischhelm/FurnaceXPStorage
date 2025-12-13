@@ -73,6 +73,8 @@ public class BlockBreakHandler {
         if (CompatHandler.isModLoaded("ironfurnaces") && CompatHandler.getHandler("ironfurnaces", true).isModFurnace(block)) return true;
         if (CompatHandler.isModLoaded("morefurnaces") && CompatHandler.getHandler("morefurnaces", false).isModFurnace(block)) return true;
         if (CompatHandler.isModLoaded("morefurnaces") && CompatHandler.getHandler("morefurnaces", true).isModFurnace(block)) return true;
+        if (CompatHandler.isModLoaded("mysticalagriculture") && CompatHandler.getHandler("mysticalagriculture", true).isModFurnace(block)) return true;
+        if (CompatHandler.isModLoaded("nuclearcraft") && CompatHandler.getHandler("nuclearcraft", true).isModFurnace(block)) return true;
         return false;
     }
 }

@@ -27,6 +27,9 @@ public class CompatHandler {
                case "furnus" : return new FurnusCompat();
                case "mysticalagriculture" : return new MysticalAgricultureCompat();
                case "nuclearcraft" : return new NuclearCraftCompat();
+               case "divinerpg" : return new DivineRPGCompat();
+               case "simplecore" : return new SimpleCoreAPICompat();
+               case "natura" : return new NaturaCompat();
                default: return null;
            }
         });

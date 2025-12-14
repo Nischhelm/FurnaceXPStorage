@@ -26,6 +26,9 @@ public class FurnaceXPStoragePlugin implements IFMLLoadingPlugin {
 		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.furnus.json", () -> CompatHandler.isModLoaded("furnus"));
 		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.mysticalagriculture.json", () -> CompatHandler.isModLoaded("mysticalagriculture"));
 		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.nuclearcraft.json", () -> CompatHandler.isModLoaded("nuclearcraft"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.divinerpg.json", () -> CompatHandler.isModLoaded("divinerpg"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.simplecore.json", () -> CompatHandler.isModLoaded("simplecore"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.natura.json", () -> CompatHandler.isModLoaded("natura"));
 		//FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.betterend.json", () -> CompatHandler.isModLoaded("betterendforge"));
 
 		FermiumRegistryAPI.enqueueMixin(true, "mixins.furnacexpstorage.crafttweaker.json", () -> CompatHandler.isModLoaded("crafttweaker"));

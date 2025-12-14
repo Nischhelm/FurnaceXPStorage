@@ -105,6 +105,9 @@ public class AttachCapabilitiesHandler {
 		if (CompatHandler.isModLoaded("morefurnaces") && CompatHandler.getHandler("morefurnaces", true).isModFurnace(tile)) return true;
 		if (CompatHandler.isModLoaded("mysticalagriculture") && CompatHandler.getHandler("mysticalagriculture", true).isModFurnace(tile)) return true;
 		if (CompatHandler.isModLoaded("nuclearcraft") && CompatHandler.getHandler("nuclearcraft", true).isModFurnace(tile)) return true;
+		if (CompatHandler.isModLoaded("divinerpg") && CompatHandler.getHandler("divinerpg", true).isModFurnace(tile)) return true;
+		if (CompatHandler.isModLoaded("simplecore") && CompatHandler.getHandler("simplecore", true).isModFurnace(tile)) return true;
+		if (CompatHandler.isModLoaded("natura") && CompatHandler.getHandler("natura", true).isModFurnace(tile)) return true;
 		return false;
 	}
 }

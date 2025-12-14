@@ -76,6 +76,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:limelib-${limelib_version}")
     compileOnly fg.deobf("curse.maven:mysticalagriculture-${mysticalagriculture_version}")
     compileOnly fg.deobf("curse.maven:nuclearcraft-mod-${nuclearcraft_version}")
+    implementation fg.deobf("curse.maven:official-divinerpg-363543:3081433")
+    implementation fg.deobf("curse.maven:simplecoreapi-226136:2629840")
+    implementation fg.deobf("curse.maven:natura-74120:2711439")
 
     compileOnly fg.deobf("curse.maven:jei-${jei_version}")
 

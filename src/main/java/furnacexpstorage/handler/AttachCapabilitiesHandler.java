@@ -4,7 +4,6 @@ import furnacexpstorage.ConfigHandler;
 import furnacexpstorage.FurnaceXPStorage;
 import furnacexpstorage.compat.CompatHandler;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
@@ -25,8 +24,8 @@ import javax.annotation.Nullable;
 public class AttachCapabilitiesHandler {
 	//Only listens if allowed
 	@SubscribeEvent
-	public static void onAttackCapabilities(AttachCapabilitiesEvent<TileEntity> event){
-		if(isFurnaceTile(event.getObject())){
+	public static void onAttachCapabilities(AttachCapabilitiesEvent<TileEntity> event){
+		if(CompatHandler.isFurnaceTile(event.getObject())){
 			event.addCapability(new ResourceLocation(FurnaceXPStorage.MODID, "xp"), new ICapabilityProvider() {
 				@Override
 				public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing enumFacing) {
@@ -90,24 +89,5 @@ public class AttachCapabilitiesHandler {
 			}
 			return new FluidStack(xpFluid, drained);
 		}
-	}
-
-	private static boolean isFurnaceTile(TileEntity tile){
-		if (tile instanceof TileEntityFurnace) return true; //includes betterendforge EndFurnace, betterwithmods, fastfurnace, nethercraft
-
-		if (CompatHandler.isModLoaded("betterendforge") && CompatHandler.getHandler("betterendforge", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("betterfurnacesreforged") && CompatHandler.getHandler("betterfurnacesreforged", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("betternether") && CompatHandler.getHandler("betternether", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("furnaceoverhaul") && CompatHandler.getHandler("furnaceoverhaul", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("furnus") && CompatHandler.getHandler("furnus", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("ironfurnaces") && CompatHandler.getHandler("ironfurnaces", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("morefurnaces") && CompatHandler.getHandler("morefurnaces", false).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("morefurnaces") && CompatHandler.getHandler("morefurnaces", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("mysticalagriculture") && CompatHandler.getHandler("mysticalagriculture", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("nuclearcraft") && CompatHandler.getHandler("nuclearcraft", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("divinerpg") && CompatHandler.getHandler("divinerpg", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("simplecore") && CompatHandler.getHandler("simplecore", true).isModFurnace(tile)) return true;
-		if (CompatHandler.isModLoaded("natura") && CompatHandler.getHandler("natura", true).isModFurnace(tile)) return true;
-		return false;
 	}
 }

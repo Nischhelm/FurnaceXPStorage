@@ -1,5 +1,6 @@
 package furnacexpstorage;
 
+import furnacexpstorage.compat.CompatHandler;
 import furnacexpstorage.handler.AttachCapabilitiesHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -28,5 +29,6 @@ public class FurnaceXPStorage {
 	public static void onPreInit(FMLPreInitializationEvent event){
 		if(!ConfigHandler.xpConfig.fluidName.isEmpty())
 			MinecraftForge.EVENT_BUS.register(AttachCapabilitiesHandler.class);
+        CompatHandler.preInit();
 	}
 }

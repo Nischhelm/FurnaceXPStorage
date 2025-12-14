@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
 public interface IFurnaceModCompat {
-    boolean isModFurnace(Block block);
-
+    //unused
+    default boolean isModFurnace(Block block){ return false; };
 	boolean isModFurnace(TileEntity tile);
 }

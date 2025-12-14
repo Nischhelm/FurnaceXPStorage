@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class AttachCapabilitiesHandler {
+public class FluidCapabilityHandler {
 	//Only listens if allowed
 	@SubscribeEvent
 	public static void onAttachCapabilities(AttachCapabilitiesEvent<TileEntity> event){

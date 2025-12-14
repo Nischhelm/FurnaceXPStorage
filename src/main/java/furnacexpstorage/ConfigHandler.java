@@ -24,6 +24,7 @@ public class ConfigHandler {
 
 		@Config.Comment("The conversion factor from xp to liquid xp")
 		@Config.Name("Conversion Factor")
+		@Config.RangeInt(min = 0)
 		public float conversionFactor = 0;
 	}
 
